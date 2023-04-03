@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete;
+@model List<Category>
+@{
+    Layout = null;
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Durum</th>
+    </tr>
+    @foreach (var category in Model)
+    {
+        <tr>
+            <td>@category.CategoryId</td>
+            <td>@category.CategoryName</td>
+            <td>@category.CategoryDescription</td>
+            <td>@category.CategoryStatus</td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="AddCategory" asp-controller="Category" class="btn btn-danger">Yeni Kategori</a>
